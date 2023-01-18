@@ -7,3 +7,8 @@ Vá para https://localhost:{porta}/swagger e clique em Authorize caso queira tes
 ![image](https://user-images.githubusercontent.com/68344109/213170376-3d0c6de6-a8ce-4d02-8467-3868221b32b7.png)
 
 Não consegui arrumar o swagger para que mostre os schemas corretos, por exemplo, no Post para criar um novo repositório apenas o parâmetro "name" é obrigatório, mas no schema aparece como nullable.
+
+
+
+<H2> To do: </h2>
+ Pretendo implementar os testes
