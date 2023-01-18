@@ -1,4 +1,4 @@
-﻿using Octokit;
+using Octokit;
 using Models.GitHub;
 using Octokit.Internal;
 
@@ -14,6 +14,7 @@ namespace aclGitHub.Services
             client.Credentials = new Credentials(token);
             var repositorio = await client.Repository.Create(repo);
             return repositorio.Id.ToString();  
+
         }
 
         public async Task<List<Branch>> listaBranches(string token, long id)
@@ -45,6 +46,8 @@ namespace aclGitHub.Services
             GitHubClient client = new GitHubClient(new ProductHeaderValue("api-gh-terra"));
             Dictionary<string,string> configs = new Dictionary<string, string>();
             
+            client.Credentials = new Credentials(token);
+
             configs.Add("url", hook.Url);
             configs.Add("token", token);
         
@@ -55,6 +58,8 @@ namespace aclGitHub.Services
         public async Task<RepositoryHook> atualizaHook(string token, AtualizaHook infosHook)
         {
               GitHubClient client = new GitHubClient(new ProductHeaderValue("api-gh-terra"));
+              client.Credentials = new Credentials(token);
+
 
               var atualizaHook = await client.Repository.Hooks.Edit(infosHook.RepoId, infosHook.HookId, infosHook.InfosHook);
 
