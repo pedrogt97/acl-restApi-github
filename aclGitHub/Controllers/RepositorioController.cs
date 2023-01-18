@@ -25,6 +25,8 @@ public class RepositorioController : ControllerBase
         try
         {
             token = Request.Headers.Authorization;
+            if(token == null)
+                return Unauthorized();
         }
         catch(ArgumentNullException ex){
             return Unauthorized();
@@ -51,6 +53,8 @@ public class RepositorioController : ControllerBase
         try
         {
             token = Request.Headers.Authorization;
+            if(token == null)
+                return Unauthorized();
         }
         catch(ArgumentNullException ex){
             return Unauthorized();
@@ -79,6 +83,8 @@ public class RepositorioController : ControllerBase
         try
         {
             token = Request.Headers.Authorization;
+            if(token == null)
+                return Unauthorized();
         }
         catch(ArgumentNullException ex){
             return Unauthorized();
@@ -107,6 +113,8 @@ public class RepositorioController : ControllerBase
         try
         {
             token = Request.Headers.Authorization;
+            if(token == null)
+                return Unauthorized();
         }
         catch(ArgumentNullException ex){
             return Unauthorized();
@@ -133,6 +141,8 @@ public class RepositorioController : ControllerBase
         try
         {
             token = Request.Headers.Authorization;
+            if(token == null)
+                return Unauthorized();
         }
         catch(ArgumentNullException ex){
             return Unauthorized();
@@ -151,5 +161,7 @@ public class RepositorioController : ControllerBase
         }
     }
 }
+
+
 
 
