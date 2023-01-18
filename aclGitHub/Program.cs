@@ -1,3 +1,4 @@
+using aclGitHub.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -7,8 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-// builder.Services.AddDbContext<TodoContext>(opt =>
-//     opt.UseInMemoryDatabase("TodoList"));
+//Inje��o de depend�ncia
+builder.Services.AddScoped<IGithubService, GithubService>();
 
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSwaggerGen(c =>{
